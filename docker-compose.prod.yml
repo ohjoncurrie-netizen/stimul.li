@@ -39,10 +39,6 @@ services:
       timeout: 5s
       retries: 5
     restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
-    cap_drop:
-      - ALL
     networks:
       - backend
 
@@ -55,14 +51,6 @@ services:
       timeout: 3s
       retries: 5
     restart: unless-stopped
-    read_only: true
-    tmpfs:
-      - /tmp:rw,noexec,nosuid,size=32m
-      - /data:rw,noexec,nosuid,size=32m
-    security_opt:
-      - no-new-privileges:true
-    cap_drop:
-      - ALL
     networks:
       - backend
 
