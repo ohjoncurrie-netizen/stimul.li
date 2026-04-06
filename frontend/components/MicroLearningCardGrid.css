@@ -1,0 +1,234 @@
+.stimuli-shell {
+  --stimuli-blue: #1a5276;
+  --stimuli-blue-deep: #12384f;
+  --stimuli-cream: #f7f2e8;
+  --stimuli-paper: #fffdf8;
+  --stimuli-ink: #142430;
+  --stimuli-muted: #5d6f7b;
+  --stimuli-line: rgba(18, 56, 79, 0.12);
+  --stimuli-glow: rgba(26, 82, 118, 0.16);
+  background:
+    radial-gradient(circle at top left, rgba(26, 82, 118, 0.14), transparent 30%),
+    linear-gradient(180deg, #f6fbfd 0%, #eef5f7 100%);
+  border: 1px solid var(--stimuli-line);
+  border-radius: 28px;
+  color: var(--stimuli-ink);
+  padding: 28px;
+  box-shadow: 0 30px 80px rgba(18, 56, 79, 0.08);
+}
+
+.stimuli-header {
+  margin-bottom: 24px;
+  max-width: 720px;
+}
+
+.stimuli-kicker {
+  color: var(--stimuli-blue);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.stimuli-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 0.95;
+  margin: 0 0 12px;
+}
+
+.stimuli-header p {
+  color: var(--stimuli-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stimuli-error {
+  background: #fff0ed;
+  border: 1px solid rgba(163, 55, 27, 0.18);
+  border-radius: 16px;
+  color: #8e2c12;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+}
+
+.stimuli-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.stimuli-card-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stimuli-card {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  min-height: 300px;
+  padding: 0;
+  perspective: 1400px;
+  text-align: left;
+}
+
+.stimuli-card:focus-visible {
+  outline: 3px solid rgba(26, 82, 118, 0.35);
+  outline-offset: 6px;
+  border-radius: 24px;
+}
+
+.stimuli-card-face {
+  backface-visibility: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 242, 0.94)),
+    var(--stimuli-paper);
+  border: 1px solid var(--stimuli-line);
+  border-radius: 24px;
+  box-shadow:
+    0 22px 40px rgba(18, 56, 79, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  inset: 0;
+  justify-content: space-between;
+  min-height: 300px;
+  padding: 24px;
+  position: absolute;
+  transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+  width: 100%;
+}
+
+.stimuli-card::before {
+  background: linear-gradient(145deg, rgba(26, 82, 118, 0.22), transparent);
+  border-radius: 24px;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translate(10px, 10px);
+  z-index: 0;
+}
+
+.stimuli-card {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.stimuli-card-front {
+  transform: rotateY(0deg);
+}
+
+.stimuli-card-back {
+  background:
+    linear-gradient(180deg, rgba(26, 82, 118, 0.98), rgba(18, 56, 79, 0.98)),
+    var(--stimuli-blue-deep);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.stimuli-card.is-flipped .stimuli-card-front {
+  transform: rotateY(-180deg);
+}
+
+.stimuli-card.is-flipped .stimuli-card-back {
+  transform: rotateY(0deg);
+}
+
+.stimuli-face-label {
+  color: var(--stimuli-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.stimuli-card-back .stimuli-face-label {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.stimuli-card-front h3,
+.stimuli-card-back p {
+  font-size: 1.16rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.stimuli-card-front h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+}
+
+.stimuli-hint {
+  color: var(--stimuli-muted);
+  font-size: 0.94rem;
+}
+
+.stimuli-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.stimuli-action {
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 16px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.stimuli-action:hover {
+  transform: translateY(-1px);
+}
+
+.stimuli-action.primary {
+  background: var(--stimuli-blue);
+  border: 1px solid var(--stimuli-blue);
+  color: white;
+  flex: 1;
+}
+
+.stimuli-action.primary:hover {
+  background: var(--stimuli-blue-deep);
+  border-color: var(--stimuli-blue-deep);
+}
+
+.stimuli-action.primary:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.stimuli-action.secondary {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--stimuli-line);
+  color: var(--stimuli-blue-deep);
+}
+
+@media (max-width: 640px) {
+  .stimuli-shell {
+    border-radius: 22px;
+    padding: 18px;
+  }
+
+  .stimuli-card,
+  .stimuli-card-face {
+    min-height: 260px;
+  }
+
+  .stimuli-actions {
+    flex-direction: column;
+  }
+
+  .stimuli-action.primary,
+  .stimuli-action.secondary {
+    width: 100%;
+  }
+}

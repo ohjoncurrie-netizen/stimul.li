@@ -1,0 +1,28 @@
+[Unit]
+Description=stimuli-api FastAPI service (Gunicorn)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=stimuli
+Group=stimuli
+WorkingDirectory=/opt/stimuli-api
+EnvironmentFile=/opt/stimuli-api/.env
+RuntimeDirectory=stimuli-api
+RuntimeDirectoryMode=0755
+ExecStart=/opt/stimuli-api/.venv/bin/gunicorn -c /opt/stimuli-api/deploy/gunicorn/gunicorn_conf.py app.main:app
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5
+TimeoutStartSec=30
+TimeoutStopSec=60
+KillSignal=SIGTERM
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/stimuli-api /run/stimuli-api
+
+[Install]
+WantedBy=multi-user.target

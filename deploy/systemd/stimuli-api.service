@@ -1,0 +1,24 @@
+[Unit]
+Description=stimuli-api FastAPI service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=stimuli
+Group=stimuli
+WorkingDirectory=/opt/stimuli-api
+EnvironmentFile=/opt/stimuli-api/.env
+ExecStart=/opt/stimuli-api/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=5
+TimeoutStartSec=30
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/stimuli-api
+
+[Install]
+WantedBy=multi-user.target

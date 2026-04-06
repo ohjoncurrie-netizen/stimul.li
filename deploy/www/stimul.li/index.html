@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stimul.li | Micro-Learning for Teachers</title>
+    <meta
+      name="description"
+      content="stimul.li helps teachers turn chapters, lecture notes, and lesson content into fast, memorable micro-learning cards."
+    />
+    <style>
+      :root {
+        --ink: #10212d;
+        --muted: #577082;
+        --blue: #1a5276;
+        --blue-deep: #154360;
+        --paper: #f7fbfd;
+        --line: rgba(16, 33, 45, 0.1);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top, rgba(26, 82, 118, 0.12), transparent 40%),
+          linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 32px 24px 96px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+      .brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+      .cta {
+        display: inline-block;
+        padding: 13px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .cta.primary { background: var(--blue); color: #fff; }
+      .cta.secondary { border: 1px solid var(--line); color: var(--ink); }
+      .hero {
+        padding: 90px 0 64px;
+        display: grid;
+        gap: 32px;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: 0.78rem;
+        color: var(--blue);
+        font-weight: 700;
+      }
+      h1 {
+        font-size: clamp(3rem, 8vw, 5.9rem);
+        line-height: 0.94;
+        margin: 16px 0 20px;
+        max-width: 880px;
+      }
+      .lead {
+        max-width: 720px;
+        color: var(--muted);
+        font-family: Arial, sans-serif;
+        font-size: 1.15rem;
+        line-height: 1.8;
+      }
+      .actions {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        margin-top: 44px;
+      }
+      .card {
+        background: rgba(255,255,255,0.82);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 26px;
+        box-shadow: 0 18px 50px rgba(16, 33, 45, 0.06);
+      }
+      .card h3 {
+        margin: 0 0 12px;
+        font-size: 1.5rem;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-family: Arial, sans-serif;
+        line-height: 1.75;
+      }
+      .footer {
+        margin-top: 72px;
+        color: var(--muted);
+        font-family: Arial, sans-serif;
+        font-size: 0.95rem;
+      }
+      @media (max-width: 640px) {
+        .wrap { padding: 22px 18px 72px; }
+        .nav { flex-direction: column; align-items: flex-start; }
+        .hero { padding-top: 56px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <div class="brand">stimul.li</div>
+        <a class="cta primary" href="https://docs.stimul.li">View API Docs</a>
+      </header>
+
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Micro-Learning for Teachers</div>
+          <h1>Turn dense lesson content into fast, memorable review material.</h1>
+          <p class="lead">
+            stimul.li helps teachers transform chapters, lecture notes, and instructional text into
+            classroom-ready micro-learning cards, structured study prompts, and exportable learning assets.
+          </p>
+          <div class="actions">
+            <a class="cta primary" href="https://docs.stimul.li">Explore the API</a>
+            <a class="cta secondary" href="mailto:support@stimul.li">Contact Sales</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Built for classrooms</h3>
+          <p>Create vocabulary prompts, retrieval-practice cards, and teaching assets that teachers can actually use the same day.</p>
+        </article>
+        <article class="card">
+          <h3>API-first workflow</h3>
+          <p>Integrate stimul.li into LMS platforms, district tools, and internal curriculum systems with structured outputs.</p>
+        </article>
+        <article class="card">
+          <h3>Safe and scalable</h3>
+          <p>Use sandbox mode for testing, background workers for large text processing, and production-ready deployment patterns on your VPS.</p>
+        </article>
+      </section>
+
+      <p class="footer">
+        stimul.li is designed for commercial education workflows, teacher productivity, and modern school technology teams.
+      </p>
+    </div>
+  </body>
+  </html>

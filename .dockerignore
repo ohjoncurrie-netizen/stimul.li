@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.production.example
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
